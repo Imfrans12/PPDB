@@ -1,0 +1,4 @@
+<% if current_user.role == "Siswa" %>
+<center><h4>Selamat Datang <%= current_user.nama %></h4></center>
+<center> <%= link_to 'Daftar Sekarang', new_tr_registrations_path, class: 'btn btn-success' %></center>
+<% end %>

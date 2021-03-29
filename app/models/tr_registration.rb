@@ -1,0 +1,2 @@
+class TrRegistration < ApplicationRecord
+end

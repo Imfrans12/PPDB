@@ -1,0 +1,2 @@
+class TrPendaftaran < ApplicationRecord
+end

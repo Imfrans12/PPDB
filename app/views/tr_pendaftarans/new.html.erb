@@ -1,0 +1,49 @@
+<div class="container-fluid">
+  <div class="row">
+    <%= form_for(@tr_pendaftarans) do |tr_pendaftaran| %>
+        <div class="form-group">
+          <%= tr_pendaftaran.label :Nis %>
+          <%= tr_pendaftaran.text_field :nis, class:'form-control', type: 'text', placeholder: '',required: true %>
+        </div>
+
+        <div class="form-group">
+          <%= tr_pendaftaran.label :Nama %>
+          <%= tr_pendaftaran.text_field :nama, class:'form-control', type: 'text', placeholder: '',required: true %>
+        </div>
+        <div class="form-group">
+          <%= tr_pendaftaran.label :jenis_kelamin %>
+          <%= tr_pendaftaran.text_field :jenis_kelamin, class:'form-control', type: 'text', placeholder: '',required: true %>
+        </div>
+        <div class="form-group">
+          <%= tr_pendaftaran.label :tempat_lahir %>
+          <%= tr_pendaftaran.text_field :tempat_lahir, class:'form-control', type: 'text', placeholder: '',required: true %>
+        </div>
+        <div class="form-group">
+          <%= tr_pendaftaran.label :tanggal_lahir %>
+          <%= tr_pendaftaran.text_field :tanggal_lahir, class:'form-control', type: 'text', placeholder: '',required: true %>
+        </div>
+        <div class="form-group">
+          <%= tr_pendaftaran.label :alamat %>
+          <%= tr_pendaftaran.text_field :alamat, class:'form-control', type: 'text', placeholder: '',required: true %>
+        </div>
+        <div class="form-group">
+          <%= tr_pendaftaran.label :asal_sekolah %>
+          <%= tr_pendaftaran.text_field :asal_sekolah, class:'form-control', type: 'text', placeholder: '',required: true %>
+        </div>
+        <div class="form-group">
+          <%= tr_pendaftaran.label :kelas %>
+          <%= tr_pendaftaran.text_field :kelas, class:'form-control', type: 'text', placeholder: '',required: true %>
+        </div>
+        <div class="form-group">
+          <%= tr_pendaftaran.label :jurusan %>
+          <%= tr_pendaftaran.text_field :jurusan, class:'form-control', type: 'text', placeholder: '',required: true %>
+        </div>
+        <div style="float: left">
+  <%= link_to 'Back', '/tr_pendaftarans', class: 'btn btn-primary' %>
+        </div>
+        <div style="float: right">
+  <%= tr_pendaftaran.submit :Save, class:'btn btn-success' %>
+</div>
+    <% end %>
+  </div>
+</div>

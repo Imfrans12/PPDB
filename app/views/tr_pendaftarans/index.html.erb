@@ -1,0 +1,48 @@
+<% if current_user.role == "Siswa" %>
+<center><h4>Selamat Datang <%= current_user.nama %></h4></center>
+<center> <%= link_to 'Daftar Sekarang', tr_pendaftarans_new_path, class: 'btn btn-success' %></center>
+<br>
+<center><%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'btn btn-secondary') %> </center>
+<% end %>
+<% if current_user.role == "Admin" %>
+<center><h5>Log Siswa </h5></center>
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Nis</th>
+      <th scope="col">Nama</th>
+      <th scope="col">Jenis Kelamin</th>
+      <th scope="col">Tempat Lahir</th>
+      <th scope="col">Tanggal Lahir</th>
+      <th scope="col">Alamat</th>
+      <th scope="col">Asal Sekolah</th>
+      <th scope="col">Kelas</th>
+      <th scope="col">Jurusan</th>
+      <th scope="col" width="300px">Action</th>
+    </tr>
+  </thead>
+  <% @tr_pendaftarans.each_with_index do |t, index| %>
+  <tbody>
+    <tr>
+      <th scope="row"> <%= index + 1 %> </th>
+      <td> <%= t.nis %> </td>
+      <td> <%= t.nama %> </td>
+      <td> <%= t.jenis_kelamin %> </td>
+      <td> <%= t.tempat_lahir %> </td>
+      <td> <%= t.tanggal_lahir %> </td>
+      <td> <%= t.alamat %> </td>
+      <td> <%= t.asal_sekolah %> </td>
+      <td> <%= t.kelas %> </td>
+      <td> <%= t.jurusan %> </td>
+      <td class="text-center">
+        <%= link_to 'Delete',tr_pendaftaran_path(t), method: :delete, data: {confirm: 'Delete Data ? '}, class: 'btn btn-danger' %>	
+        <%= link_to 'Edit', edit_tr_pendaftaran_path(t), class: 'btn btn-primary' %>
+      </td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>
+<br>
+<center><%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'btn btn-secondary') %> </center>
+<% end %>
